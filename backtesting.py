@@ -7,9 +7,11 @@ class data:
     def __init__(self,ticker=None):
         self.ticker = ticker
        
-        mary = nasdaqdatalink.get(ticker, returns="numpy")
-        dave = pd.DataFrame(mary)
-        self.data = dave.to_csv('test_data.csv')
+        data1 = nasdaqdatalink.get(ticker, returns="numpy")
+        data2 = pd.DataFrame(data1)
+        self.data = data2.to_csv('test_data.csv')
+        del data1
+        del data2
 
 
 
